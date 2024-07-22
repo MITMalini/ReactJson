@@ -1,0 +1,39 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  top: 1;
+  height: 5%;
+}
+
+footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 5%;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-direction: column;
+  /* width: 30%;
+  height: 20vh; */
+  margin: 10px;
+}

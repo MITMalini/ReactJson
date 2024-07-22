@@ -1,0 +1,50 @@
+{
+    "Logo": "Logo.png",
+    "TitleHeight": 75,
+    "Screens": [
+        {
+            "Name": "Login",
+            "ID": "login",
+            "Funct": "login",
+            "Layout": "3x3",
+            "Header": "Login Header",
+            "Footer": "Login Footer",
+            "Widgets": {
+                "cell-1": [
+                    {
+                        "Type": "Label",
+                        "Text": "Username",
+                        "Size": 20
+                    },
+                    {
+                        "Type": "Entry",
+                        "ID": "user"
+                    }
+                ],
+                "cell-2": [
+                    {
+                        "Type": "Label",
+                        "Text": "Password",
+                        "Size": 20
+                    },
+                    {
+                        "Type": "Pass",
+                        "ID": "pass"
+                    }
+                ],
+                "cell-3": [
+                    {
+                        "Type": "Button",
+                        "Text": "Close",
+                        "Action": "Cancel"
+                    },
+                    {
+                        "Type": "Button",
+                        "Text": "Login",
+                        "Action": "OK"
+                    }
+                ]
+            }
+        }
+    ]
+}
