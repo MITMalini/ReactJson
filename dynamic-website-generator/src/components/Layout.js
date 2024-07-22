@@ -1,12 +1,12 @@
-import React from "react";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import "./Layout.css";
-import { styled } from "@mui/material/styles";
-// import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-
-const Layout = ({ layout, header, footer, children }) => {
+import config from "./data/config.json";
+const Layout = ({ Layout, header, footer, children }) => {
   const renderCells = () => {
     const cells = {
       "cell-1": [],
@@ -19,6 +19,7 @@ const Layout = ({ layout, header, footer, children }) => {
       "cell-8": [],
       "cell-9": [],
     };
+
     const Item = styled(Paper)(({ theme }) => ({
       backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
       ...theme.typography.body2,
@@ -34,7 +35,7 @@ const Layout = ({ layout, header, footer, children }) => {
     });
 
     return Object.keys(cells).map((cellKey, index) => (
-      <Grid key={index} className="cell">
+      <Grid item xs={4} key={index} className="cell" style={{ marginTop: 10 }}>
         <Item>{cells[cellKey]}</Item>
       </Grid>
     ));
@@ -43,9 +44,11 @@ const Layout = ({ layout, header, footer, children }) => {
   return (
     <div className="layout">
       <header>{header}</header>
-      <Grid container rowSpacing={1} columnSpacing={1}>
-        {renderCells()}
-      </Grid>
+      <Box style={{ height: "80vh", marginTop: "10vh" }}>
+        <Grid container item spacing={1}>
+          {renderCells()}
+        </Grid>
+      </Box>
       <footer>{footer}</footer>
     </div>
   );
