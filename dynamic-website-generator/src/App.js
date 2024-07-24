@@ -12,11 +12,6 @@ const App = () => {
   return (
     <Router>
       <div>
-        <img
-          src={config.Logo}
-          alt="Logo"
-          style={{ height: config.TitleHeight }}
-        />
         <Routes>
           {/* Redirect to the first screen if no specific screen is specified */}
           <Route

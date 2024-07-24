@@ -31,7 +31,7 @@ const Screen = ({ screen, onAction }) => {
   };
 
   return (
-    <div style={{ position: "relative", height: "100vh" }}>
+    <div style={{ position: "relative", height: "80vh" }}>
       {screen.Widgets.map(renderWidget)}
       {screen.Buttons.map(renderWidget)}
     </div>

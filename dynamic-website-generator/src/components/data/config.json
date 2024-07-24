@@ -1,13 +1,50 @@
 {
-    "Logo": "Logo.png",
-    "TitleHeight": 75,
+    "Header": {
+        "Logo": "Logo.png",
+        "Text": "MIT IOT PLATFORM",
+        "backgroundColor": "#f1f1f1",
+        "textAlign": "center",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "width": "100%",
+        "top": "1",
+        "height": "10vh",
+        "display": "flex",
+        "items": [
+            {
+                "Type": "Logo",
+                "src": "Logo.png",
+                "alt": "Logo",
+                "height": "80%",
+                "paddingLeft": "1%"
+            },
+            {
+                "Type": "Title",
+                "text": "MITESP IOT PLATFORM",
+                "color": "red",
+                "fontSize": "30px"
+            },
+            {
+                "Type": "Button",
+                "text": "Logout",
+                "action": "logout"
+            }
+        ]
+    },
+    "Footer": {
+        "backgroundColor": "#f1f1f1",
+        "textAlign": "center",
+        "alignContent": "center",
+        "width": "100%",
+        "bottom": "0",
+        "height": "10vh",
+        "display": "flex"
+    },
     "Screens": [
         {
             "Name": "Login",
             "ID": "login",
             "Funct": "login",
-            "Header": "Login Header",
-            "Footer": "Login Footer",
             "Widgets": [
                 {
                     "Type": "Label",
