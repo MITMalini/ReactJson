@@ -6,7 +6,8 @@
             "Name": "Login",
             "ID": "login",
             "Funct": "login",
-            "Layout": "Custom",
+            "Header": "Login Header",
+            "Footer": "Login Footer",
             "Widgets": [
                 {
                     "Type": "Label",
