@@ -5,13 +5,18 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import DynamicPage from "../src/components/pages/DynamicPage";
+import DynamicPage from "./components/pages/DynamicPage";
 import config from "./components/data/config.json";
 
 const App = () => {
   return (
     <Router>
       <div>
+        <img
+          src={config.Logo}
+          alt="Logo"
+          style={{ height: config.TitleHeight }}
+        />
         <Routes>
           {/* Redirect to the first screen if no specific screen is specified */}
           <Route

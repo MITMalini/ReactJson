@@ -6,45 +6,51 @@
             "Name": "Login",
             "ID": "login",
             "Funct": "login",
-            "Layout": "3x3",
-            "Header": "Login Header",
-            "Footer": "Login Footer",
-            "Widgets": {
-                "cell-1": [
-                    {
-                        "Type": "Label",
-                        "Text": "Username",
-                        "Size": 20
-                    },
-                    {
-                        "Type": "Entry",
-                        "ID": "user"
-                    }
-                ],
-                "cell-2": [
-                    {
-                        "Type": "Label",
-                        "Text": "Password",
-                        "Size": 20
-                    },
-                    {
-                        "Type": "Pass",
-                        "ID": "pass"
-                    }
-                ],
-                "cell-3": [
-                    {
-                        "Type": "Button",
-                        "Text": "Close",
-                        "Action": "Cancel"
-                    },
-                    {
-                        "Type": "Button",
-                        "Text": "Login",
-                        "Action": "OK"
-                    }
-                ]
-            }
+            "Layout": "Custom",
+            "Widgets": [
+                {
+                    "Type": "Label",
+                    "Text": "Username",
+                    "X": 25,
+                    "Y": 25,
+                    "W": 25,
+                    "Size": 20
+                },
+                {
+                    "Type": "Label",
+                    "Text": "Password",
+                    "X": 25,
+                    "Y": 30,
+                    "W": 25,
+                    "Size": 20
+                },
+                {
+                    "ID": "user",
+                    "Type": "Entry",
+                    "Submit": true,
+                    "X": 50,
+                    "Y": 25,
+                    "W": 25
+                },
+                {
+                    "ID": "pass",
+                    "Type": "Pass",
+                    "Submit": true,
+                    "X": 50,
+                    "Y": 30,
+                    "W": 25
+                }
+            ],
+            "Buttons": [
+                {
+                    "Text": "Close",
+                    "Action": "Cancel"
+                },
+                {
+                    "Text": "Login",
+                    "Action": "OK"
+                }
+            ]
         }
     ]
 }
