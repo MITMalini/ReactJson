@@ -1,17 +1,16 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Screen from "../Screen";
+import Grid from "@mui/material/Grid";
 import config from "../data/config.json";
+import Screen from "../Screen";
+import Button from "@mui/material/Button";
+import theme from "../Theme"; // Import the theme
 
 const DynamicPage = () => {
   const { pageId } = useParams();
   const navigate = useNavigate();
 
-  console.log("pageId:", pageId); // Verify pageId value
-  console.log("Screens:", config.Screens); // Verify config.Screens
-
   const screen = config.Screens.find((screen) => screen.ID === pageId);
-  console.log("screen:", screen); // Verify if the screen is found
 
   if (!screen) {
     return <div>Page not found</div>;
@@ -21,10 +20,12 @@ const DynamicPage = () => {
     if (action === "Cancel") {
       navigate(-1); // Go back
     } else if (action === "OK" || action === "Next") {
-      const nextScreen = config.Screens.find((s) => s.ID === screen.Next);
-      if (nextScreen) {
-        navigate(`/${nextScreen.ID}`);
+      const nextScreenId = screen.Next; // Get the next screen ID
+      if (nextScreenId) {
+        navigate(`/${nextScreenId}`);
       }
+    } else {
+      console.log(`Unhandled action: ${action}`);
     }
   };
 
@@ -37,23 +38,63 @@ const DynamicPage = () => {
               key={index}
               src={item.src}
               alt={item.alt}
-              style={{ height: item.height, paddingLeft: item.paddingLeft }}
+              style={{ height: "100%" }}
             />
           );
         case "Title":
           return (
             <h1
               key={index}
-              style={{ fontSize: item.fontSize, color: item.color }}
+              style={{
+                color: theme.colors.header.text,
+                fontSize: theme.fontSize.header,
+              }}
             >
               {item.text}
             </h1>
           );
         case "Button":
           return (
-            <button key={index} onClick={() => handleAction(item.action)}>
+            <Button
+              key={index}
+              onClick={() => handleAction(item.action)}
+              variant={item.variant}
+              style={{
+                marginRight: item.marginRight,
+                backgroundColor: theme.colors.button.primary.background,
+                color: theme.colors.button.primary.color,
+                fontSize: theme.fontSize.button,
+              }}
+            >
               {item.text}
-            </button>
+            </Button>
+          );
+        default:
+          return null;
+      }
+    });
+  };
+
+  const renderFooterItems = (items) => {
+    return items.map((item, index) => {
+      const color = item.color;
+      switch (item.Type) {
+        case "Button":
+          return (
+            <Button
+              key={index}
+              onClick={() => handleAction(item.action)}
+              variant={item.variant}
+              style={{
+                marginRight: item.marginRight,
+                backgroundColor: theme.colors.button[color].background,
+                color: theme.colors.button[color].color,
+                fontSize: theme.fontSize.button,
+                width: item.width,
+              }}
+            >
+              {item.text}
+            </Button>
           );
         default:
           return null;
@@ -62,12 +103,37 @@ const DynamicPage = () => {
   };
 
   return (
-    <div>
-      <header style={config.Header}>
+    <div className="layout">
+      <header
+        style={{
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "10vh",
+          display: "flex",
+          ...config.Header,
+          backgroundColor: theme.colors.header.background,
+        }}
+      >
         {renderHeaderItems(config.Header.items)}
       </header>
       <Screen screen={screen} onAction={handleAction} />
-      <footer style={config.Footer}></footer>
+
+      <footer
+        style={{
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "10vh",
+          display: "flex",
+          bottom: "0",
+          position: "fixed",
+          ...config.Footer,
+          backgroundColor: theme.colors.footer.background,
+        }}
+      >
+        {screen.Footer ? renderFooterItems(screen.Footer.items) : null}
+      </footer>
     </div>
   );
 };

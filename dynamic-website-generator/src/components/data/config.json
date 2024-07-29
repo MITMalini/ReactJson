@@ -1,15 +1,5 @@
 {
     "Header": {
-        "Logo": "Logo.png",
-        "Text": "MIT IOT PLATFORM",
-        "backgroundColor": "#f1f1f1",
-        "textAlign": "center",
-        "justifyContent": "space-between",
-        "alignItems": "center",
-        "width": "100%",
-        "top": "1",
-        "height": "10vh",
-        "display": "flex",
         "items": [
             {
                 "Type": "Logo",
@@ -26,20 +16,15 @@
             },
             {
                 "Type": "Button",
-                "text": "Logout",
-                "action": "logout"
+                "text": "About Us",
+                "action": "logout",
+                "variant": "contained",
+                "marginRight": "1%",
+                "color": "red"
             }
         ]
     },
-    "Footer": {
-        "backgroundColor": "#f1f1f1",
-        "textAlign": "center",
-        "alignContent": "center",
-        "width": "100%",
-        "bottom": "0",
-        "height": "10vh",
-        "display": "flex"
-    },
+    "Footer": {},
     "Screens": [
         {
             "Name": "Login",
@@ -47,48 +32,131 @@
             "Funct": "login",
             "Widgets": [
                 {
+                    "Type": "Image",
+                    "src": "LogoMain.png",
+                    "alt": "Logo",
+                    "H": "auto",
+                    "W": "30",
+                    "X": "35",
+                    "Y": "10",
+                    "paddingLeft": "1%"
+                },
+                {
                     "Type": "Label",
                     "Text": "Username",
-                    "X": 25,
-                    "Y": 25,
+                    "X": 35,
+                    "Y": 60,
                     "W": 25,
-                    "Size": 20
+                    "Size": 40
                 },
                 {
                     "Type": "Label",
                     "Text": "Password",
-                    "X": 25,
-                    "Y": 30,
+                    "X": 35,
+                    "Y": 70,
                     "W": 25,
-                    "Size": 20
+                    "Size": 40
                 },
                 {
                     "ID": "user",
                     "Type": "Entry",
                     "Submit": true,
-                    "X": 50,
-                    "Y": 25,
-                    "W": 25
+                    "X": 45,
+                    "Y": 59,
+                    "W": 20,
+                    "H": 5,
+                    "placeholder": "Enter your username"
                 },
                 {
                     "ID": "pass",
                     "Type": "Pass",
                     "Submit": true,
-                    "X": 50,
-                    "Y": 30,
-                    "W": 25
+                    "X": 45,
+                    "Y": 69,
+                    "W": 20,
+                    "H": 5,
+                    "pr": "4.5rem",
+                    "placeholder": "Enter password",
+                    "showText": "Show",
+                    "hideText": "Hide"
                 }
             ],
-            "Buttons": [
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "LOGIN",
+                        "action": "login",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "Login",
+            "ID": "login",
+            "Funct": "login",
+            "Widgets": [
                 {
-                    "Text": "Close",
-                    "Action": "Cancel"
+                    "Type": "Image",
+                    "src": "LogoMain.png",
+                    "alt": "Logo",
+                    "H": "auto",
+                    "W": "30",
+                    "X": "35",
+                    "Y": "10",
+                    "paddingLeft": "1%"
                 },
                 {
-                    "Text": "Login",
-                    "Action": "OK"
+                    "Type": "Label",
+                    "Text": "Username",
+                    "X": 35,
+                    "Y": 60,
+                    "W": 25,
+                    "Size": 40
+                },
+                {
+                    "Type": "Label",
+                    "Text": "Password",
+                    "X": 35,
+                    "Y": 70,
+                    "W": 25,
+                    "Size": 40
+                },
+                {
+                    "ID": "user",
+                    "Type": "Entry",
+                    "Submit": true,
+                    "X": 45,
+                    "Y": 59,
+                    "W": 20,
+                    "H": 5,
+                    "placeholder": "Enter your username"
+                },
+                {
+                    "ID": "pass",
+                    "Type": "Pass",
+                    "Submit": true,
+                    "X": 45,
+                    "Y": 69,
+                    "W": 20,
+                    "H": 5,
+                    "pr": "4.5rem",
+                    "placeholder": "Enter password",
+                    "showText": "Show",
+                    "hideText": "Hide"
                 }
-            ]
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "action": "OK",
+                        "width": "10%"
+                    }
+                ]
+            }
         }
     ]
 }
