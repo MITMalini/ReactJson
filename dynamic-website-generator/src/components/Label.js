@@ -1,14 +1,13 @@
 import React from "react";
-import theme from "./Theme"; // Import the theme
 
-const Label = ({ Text, X, Y, W, Size }) => {
+const Label = ({ Text, X, Y, W, Size, Color }) => {
   const style = {
     position: "absolute",
     left: `${X}%`,
     top: `${Y}%`,
     width: `${W}%`,
-    fontSize: theme.fontSize.text,
-    color: theme.colors.text.primary,
+    color: Color,
+    fontSize: Size,
   };
 
   return <div style={style}>{Text}</div>;

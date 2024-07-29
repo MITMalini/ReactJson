@@ -19,7 +19,7 @@ const DynamicPage = () => {
   const handleAction = (action) => {
     if (action === "Cancel") {
       navigate(-1); // Go back
-    } else if (action === "OK" || action === "Next") {
+    } else if (action === "login" || action === "Next") {
       const nextScreenId = screen.Next; // Get the next screen ID
       if (nextScreenId) {
         navigate(`/${nextScreenId}`);
@@ -50,7 +50,7 @@ const DynamicPage = () => {
                 fontSize: theme.fontSize.header,
               }}
             >
-              {item.text}
+              {screen.Name}
             </h1>
           );
         case "Button":

@@ -5,12 +5,15 @@ import Label from "./Label";
 import Entry from "./Entry";
 import Button from "./Button";
 import Image from "./Image";
-import theme from "./Theme"; // Import the theme
+import { useParams, useNavigate } from "react-router-dom";
 
 const Screen = ({ screen, onAction }) => {
+  const navigate = useNavigate();
+  const handleAction = (action) => {
+    navigate(`/${action}`);
+  };
   const renderWidgets = (widgets) => {
     return widgets.map((widget, index) => {
-      const color = widget.color;
       switch (widget.Type) {
         case "Label":
           return <Label key={index} {...widget} />;
@@ -21,18 +24,10 @@ const Screen = ({ screen, onAction }) => {
           return (
             <Button
               key={index}
-              onClick={() => onAction(widget.Action)}
-              variant={widget.variant}
-              style={{
-                marginRight: widget.marginRight,
-                backgroundColor: theme.colors.button[color].background,
-                color: theme.colors.button[color].color,
-                fontSize: theme.fontSize.button,
-                width: widget.width,
-              }}
-            >
-              {widget.text}
-            </Button>
+              {...widget}
+              Type={widget.Type}
+              onClick={() => handleAction(widget.onClick)}
+            />
           );
         case "Image":
           return <Image key={index} {...widget} />;
@@ -45,6 +40,7 @@ const Screen = ({ screen, onAction }) => {
   return (
     <Grid container spacing={2}>
       {renderWidgets(screen.Widgets)}
+      {console.log(screen.Widgets)}
     </Grid>
   );
 };

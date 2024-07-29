@@ -6,7 +6,7 @@ const Image = ({ src, alt, X, Y, W, H }) => {
     left: `${X}%`,
     top: `${Y}%`,
     width: `${W}%`,
-    height: `${H}`,
+    height: "auto",
   };
 
   return <img src={src} alt={alt} style={style} />;

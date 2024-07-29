@@ -5,57 +5,57 @@
                 "Type": "Logo",
                 "src": "Logo.png",
                 "alt": "Logo",
-                "height": "80%",
+                "height": "70%",
                 "paddingLeft": "1%"
             },
             {
-                "Type": "Title",
-                "text": "MITESP IOT PLATFORM",
-                "color": "red",
-                "fontSize": "30px"
+                "Type": "Title"
             },
             {
                 "Type": "Button",
                 "text": "About Us",
                 "action": "logout",
                 "variant": "contained",
-                "marginRight": "1%",
-                "color": "red"
+                "marginRight": "1%"
             }
         ]
     },
-    "Footer": {},
+    "Footer": {
+        "justifyContent": "space-evenly"
+    },
     "Screens": [
         {
-            "Name": "Login",
+            "Name": "LOGIN ",
             "ID": "login",
             "Funct": "login",
+            "Next": "home",
             "Widgets": [
                 {
                     "Type": "Image",
                     "src": "LogoMain.png",
                     "alt": "Logo",
-                    "H": "auto",
                     "W": "30",
                     "X": "35",
-                    "Y": "10",
+                    "Y": "20",
                     "paddingLeft": "1%"
                 },
                 {
                     "Type": "Label",
                     "Text": "Username",
+                    "Color": "black",
                     "X": 35,
                     "Y": 60,
                     "W": 25,
-                    "Size": 40
+                    "Size": 20
                 },
                 {
                     "Type": "Label",
                     "Text": "Password",
+                    "Color": "black",
                     "X": 35,
                     "Y": 70,
                     "W": 25,
-                    "Size": 40
+                    "Size": 20
                 },
                 {
                     "ID": "user",
@@ -88,72 +88,104 @@
                         "text": "LOGIN",
                         "action": "login",
                         "width": "30%",
-                        "color": "secondary"
+                        "color": "primary"
                     }
                 ]
             }
         },
         {
-            "Name": "Login",
-            "ID": "login",
-            "Funct": "login",
+            "Name": "HOME ",
+            "ID": "home",
+            "Next": "home",
             "Widgets": [
                 {
-                    "Type": "Image",
-                    "src": "LogoMain.png",
-                    "alt": "Logo",
-                    "H": "auto",
-                    "W": "30",
-                    "X": "35",
-                    "Y": "10",
-                    "paddingLeft": "1%"
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "8",
+                    "Y": "20",
+                    "H": "30",
+                    "Text": "Machine1",
+                    "Size": 20,
+                    "onClick": "Machine1"
                 },
                 {
-                    "Type": "Label",
-                    "Text": "Username",
-                    "X": 35,
-                    "Y": 60,
-                    "W": 25,
-                    "Size": 40
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "38",
+                    "Y": "20",
+                    "H": "30",
+                    "Text": "Machine 2",
+                    "Size": 20,
+                    "onClick": "Machine2"
                 },
                 {
-                    "Type": "Label",
-                    "Text": "Password",
-                    "X": 35,
-                    "Y": 70,
-                    "W": 25,
-                    "Size": 40
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "68",
+                    "Y": "20",
+                    "H": "30",
+                    "Text": "Machine 3",
+                    "Size": 20,
+                    "onClick": "Machine3"
                 },
                 {
-                    "ID": "user",
-                    "Type": "Entry",
-                    "Submit": true,
-                    "X": 45,
-                    "Y": 59,
-                    "W": 20,
-                    "H": 5,
-                    "placeholder": "Enter your username"
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "8",
+                    "Y": "55",
+                    "H": "30",
+                    "Text": "Machine 4",
+                    "Size": 20,
+                    "onClick": "Machine4"
                 },
                 {
-                    "ID": "pass",
-                    "Type": "Pass",
-                    "Submit": true,
-                    "X": 45,
-                    "Y": 69,
-                    "W": 20,
-                    "H": 5,
-                    "pr": "4.5rem",
-                    "placeholder": "Enter password",
-                    "showText": "Show",
-                    "hideText": "Hide"
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "38",
+                    "Y": "55",
+                    "H": "30",
+                    "Text": "Machine 5",
+                    "Size": 20,
+                    "onClick": "Machine5"
+                },
+                {
+                    "Type": "Button",
+                    "variant": "contained",
+                    "color": "primary",
+                    "W": "25",
+                    "X": "68",
+                    "Y": "55",
+                    "H": "30",
+                    "Text": "Machine 6",
+                    "Size": 20,
+                    "onClick": "Machine6"
                 }
             ],
             "Footer": {
                 "items": [
                     {
                         "Type": "Button",
-                        "action": "OK",
-                        "width": "10%"
+                        "text": "Back",
+                        "action": "login",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "NEXT",
+                        "action": "login",
+                        "width": "30%",
+                        "color": "secondary"
                     }
                 ]
             }

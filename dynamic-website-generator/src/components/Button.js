@@ -1,13 +1,13 @@
 import React from "react";
 
-const Button = ({ Text, X, Y, W, H, size, onClick }) => {
+const Button = ({ Text, X, Y, W, H, Size, onClick }) => {
   const style = {
     position: "absolute",
     left: `${X}%`,
     top: `${Y}%`,
     width: `${W}%`,
     height: `${H}%`,
-    fontSize: `${size}px`,
+    fontSize: `${Size}px`,
   };
 
   return (
