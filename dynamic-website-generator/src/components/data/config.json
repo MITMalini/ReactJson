@@ -189,6 +189,204 @@
                     }
                 ]
             }
+        },
+        {
+            "Name": "MACHINE 1 ",
+            "ID": "Machine1",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/public-dashboards/de568a5ce921409aa3cc75d932e33c4c",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 2 ",
+            "ID": "Machine2",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/public-dashboards/c95568a38d4e44e686c5661a24a3f5df",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 3 ",
+            "ID": "Machine3",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/public-dashboards/a1187efe1edb47bdb556747033bceffa",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 4 ",
+            "ID": "Machine4",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/public-dashboards/957cec5907194d28ab20aa297b7dae32",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 5 ",
+            "ID": "Machine5",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/d/ad851313-53e3-4785-a9bf-b08d5448b3ed/machine-5?orgId=1&shareView=link&from=1722393349796&to=1722399999166",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 6 ",
+            "ID": "Machine6",
+            "Widgets": [
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/d/f933ce28-58f0-4a5a-b795-9b9a53a14599/machine-6?orgId=1&shareView=link&from=1722393349796&to=1722399999166",
+                    "X": 0,
+                    "Y": 10,
+                    "W": 99,
+                    "H": 80,
+                    "border": "2px solid black"
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
         }
     ]
 }

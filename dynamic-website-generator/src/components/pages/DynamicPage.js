@@ -17,7 +17,7 @@ const DynamicPage = () => {
   }
 
   const handleAction = (action) => {
-    if (action === "Cancel") {
+    if (action === "back") {
       navigate(-1); // Go back
     } else if (action === "login" || action === "Next") {
       const nextScreenId = screen.Next; // Get the next screen ID

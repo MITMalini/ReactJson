@@ -5,6 +5,7 @@ import Label from "./Label";
 import Entry from "./Entry";
 import Button from "./Button";
 import Image from "./Image";
+import Iframe from "./Iframe";
 import { useParams, useNavigate } from "react-router-dom";
 
 const Screen = ({ screen, onAction }) => {
@@ -31,6 +32,8 @@ const Screen = ({ screen, onAction }) => {
           );
         case "Image":
           return <Image key={index} {...widget} />;
+        case "Iframe": // Handle the Iframe component
+          return <Iframe key={index} {...widget} />;
         default:
           return null;
       }
