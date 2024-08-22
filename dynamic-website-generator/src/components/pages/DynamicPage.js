@@ -15,16 +15,16 @@ const DynamicPage = () => {
     return <div>Page not found</div>;
   }
 
-  const handleAction = (action) => {
-    if (action === "back") {
+  const handleAction = (Action) => {
+    if (Action === "back") {
       navigate(-1); // Go back
-    } else if (action === "login" || action === "Next") {
-      const nextScreenId = screen.Next; // Get the next screen ID
+    } else if (Action === "login" || Action === "Next") {
+      const nextScreenId = screen.Footer.items[0].NextScreen; // Get the next screen ID
       if (nextScreenId) {
         navigate(`/${nextScreenId}`);
       }
     } else {
-      console.log(`Unhandled action: ${action}`);
+      console.log(`Unhandled Action: ${Action}`);
     }
   };
 
@@ -56,7 +56,7 @@ const DynamicPage = () => {
           return (
             <Button
               key={index}
-              onClick={() => handleAction(item.action)}
+              onClick={() => handleAction(item.Action)}
               variant={item.variant}
               style={{
                 marginRight: item.marginRight,
@@ -82,7 +82,7 @@ const DynamicPage = () => {
           return (
             <Button
               key={index}
-              onClick={() => handleAction(item.action)}
+              onClick={() => handleAction(item.Action)}
               variant={item.variant}
               style={{
                 marginRight: item.marginRight,
