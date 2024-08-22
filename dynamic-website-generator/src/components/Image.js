@@ -1,6 +1,6 @@
 import React from "react";
 
-const Image = ({ src, alt, X, Y, W, H }) => {
+const Image = ({ Src, Alt, X, Y, W, H }) => {
   const style = {
     position: "absolute",
     left: `${X}%`,
@@ -9,7 +9,7 @@ const Image = ({ src, alt, X, Y, W, H }) => {
     height: "auto",
   };
 
-  return <img src={src} alt={alt} style={style} />;
+  return <img src={Src} alt={Alt} style={style} />;
 };
 
 export default Image;

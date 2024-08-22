@@ -1,6 +1,11 @@
 import React from "react";
-
-const Button = ({ Text, X, Y, W, H, Size, onClick, icon }) => {
+import { useNavigate } from "react-router-dom";
+const Button = ({ Text, X, Y, W, H, Size, NextScreen, Icon }) => {
+  const navigate = useNavigate();
+  const handleAction = (action) => {
+    navigate(`/${action}`);
+    console.log(action);
+  };
   const style = {
     position: "absolute",
     left: `${X}%`,
@@ -8,7 +13,7 @@ const Button = ({ Text, X, Y, W, H, Size, onClick, icon }) => {
     width: `${W}%`,
     height: `${H}%`,
     fontSize: `${Size}px`,
-    icon: icon,
+    icon: Icon,
   };
 
   const iconStyle = {
@@ -17,8 +22,8 @@ const Button = ({ Text, X, Y, W, H, Size, onClick, icon }) => {
   };
 
   return (
-    <button style={style} onClick={onClick}>
-      {icon && <img src={icon} alt="icon" style={iconStyle} />} {Text}
+    <button style={style} onClick={() => handleAction(NextScreen)}>
+      {Icon && <img src={Icon} alt="icon" style={iconStyle} />} {Text}
     </button>
   );
 };

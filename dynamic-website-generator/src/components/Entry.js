@@ -1,6 +1,6 @@
 import React from "react";
 
-const Entry = ({ id, X, Y, W, H, type = "text" }) => {
+const Entry = ({ Id, X, Y, W, H, Type, Placeholder }) => {
   const style = {
     position: "absolute",
     left: `${X}%`,
@@ -9,7 +9,7 @@ const Entry = ({ id, X, Y, W, H, type = "text" }) => {
     height: `${H}%`,
   };
 
-  return <input id={id} type={type} style={style} />;
+  return <input id={Id} type={Type} style={style} placeholder={Placeholder} />;
 };
 
 export default Entry;

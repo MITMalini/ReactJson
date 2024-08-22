@@ -6,7 +6,7 @@ import Entry from "./Entry";
 import Button from "./Button";
 import Image from "./Image";
 import Iframe from "./Iframe";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Screen = ({ screen, onAction }) => {
   const navigate = useNavigate();
@@ -19,17 +19,11 @@ const Screen = ({ screen, onAction }) => {
         case "Label":
           return <Label key={index} {...widget} />;
         case "Entry":
-        case "Pass":
+          return <Entry key={index} {...widget} Type={widget.Type} />;
+        case "password":
           return <Entry key={index} {...widget} Type={widget.Type} />;
         case "Button":
-          return (
-            <Button
-              key={index}
-              {...widget}
-              Type={widget.Type}
-              onClick={() => handleAction(widget.onClick)}
-            />
-          );
+          return <Button key={index} {...widget} Type={widget.Type} />;
         case "Image":
           return <Image key={index} {...widget} />;
         case "Iframe": // Handle the Iframe component
