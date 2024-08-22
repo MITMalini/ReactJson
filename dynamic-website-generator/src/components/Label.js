@@ -1,6 +1,6 @@
 import React from "react";
 
-const Label = ({ Text, X, Y, W, Size, Color }) => {
+const Label = ({ Text, X, Y, W, Size, Color, fontWeight }) => {
   const style = {
     position: "absolute",
     left: `${X}%`,
@@ -8,6 +8,7 @@ const Label = ({ Text, X, Y, W, Size, Color }) => {
     width: `${W}%`,
     color: Color,
     fontSize: Size,
+    fontWeight: fontWeight,
   };
 
   return <div style={style}>{Text}</div>;

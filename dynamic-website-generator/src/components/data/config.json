@@ -195,6 +195,98 @@
             "ID": "Machine1",
             "Widgets": [
                 {
+                    "Type": "Label",
+                    "Text": "TEMPERATURE",
+                    "Color": "black",
+                    "X": 15,
+                    "Y": 13,
+                    "W": 25,
+                    "Size": 25,
+                    "fontWeight": 700
+                },
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/d-solo/c5eea826-aa41-4426-ba54-4d332f138984/machine-1?orgId=1&from=1722393349796&to=1722399999166&panelId=1",
+                    "X": 2,
+                    "Y": 20,
+                    "W": 40,
+                    "H": 40,
+                    "border": "2px solid black"
+                },
+                {
+                    "Type": "Label",
+                    "Text": "HUMIDITY",
+                    "Color": "black",
+                    "X": 50,
+                    "Y": 13,
+                    "W": 25,
+                    "Size": 25,
+                    "fontWeight": 700
+                },
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/d-solo/c5eea826-aa41-4426-ba54-4d332f138984/machine-1?orgId=1&from=1722393349796&to=1722399999166&panelId=3",
+                    "X": 45,
+                    "Y": 20,
+                    "W": 20,
+                    "H": 40,
+                    "border": "2px solid black"
+                },
+                {
+                    "Type": "Label",
+                    "Text": "HEAT SHEET",
+                    "Color": "black",
+                    "X": 79,
+                    "Y": 13,
+                    "W": 15,
+                    "Size": 25,
+                    "fontWeight": 700
+                },
+                {
+                    "Type": "Iframe",
+                    "src": "http://localhost:3000/d-solo/c5eea826-aa41-4426-ba54-4d332f138984/machine-1?orgId=1&from=1722393349796&to=1722399999166&panelId=6",
+                    "X": 68,
+                    "Y": 20,
+                    "W": 30,
+                    "H": 40,
+                    "border": "2px solid black"
+                },
+                {
+                    "Type": "Button",
+                    "Text": "SETTINGS",
+                    "action": "back",
+                    "icon": "settings.jpg",
+                    "W": "30",
+                    "color": "primary",
+                    "X": "5",
+                    "Y": "65",
+                    "H": 20
+                }
+            ],
+            "Footer": {
+                "items": [
+                    {
+                        "Type": "Button",
+                        "text": "Back",
+                        "action": "back",
+                        "width": "30%",
+                        "color": "primary"
+                    },
+                    {
+                        "Type": "Button",
+                        "text": "Home",
+                        "action": "home",
+                        "width": "30%",
+                        "color": "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MACHINE 1 ",
+            "ID": "Machine1Grafana",
+            "Widgets": [
+                {
                     "Type": "Iframe",
                     "src": "http://localhost:3000/public-dashboards/de568a5ce921409aa3cc75d932e33c4c",
                     "X": 0,
@@ -225,7 +317,7 @@
         },
         {
             "Name": "MACHINE 2 ",
-            "ID": "Machine2",
+            "ID": "Machine2Grafana",
             "Widgets": [
                 {
                     "Type": "Iframe",
@@ -258,7 +350,7 @@
         },
         {
             "Name": "MACHINE 3 ",
-            "ID": "Machine3",
+            "ID": "Machine3Grafana",
             "Widgets": [
                 {
                     "Type": "Iframe",
@@ -291,7 +383,7 @@
         },
         {
             "Name": "MACHINE 4 ",
-            "ID": "Machine4",
+            "ID": "Machine4Grafana",
             "Widgets": [
                 {
                     "Type": "Iframe",
@@ -324,7 +416,7 @@
         },
         {
             "Name": "MACHINE 5 ",
-            "ID": "Machine5",
+            "ID": "Machine5Grafana",
             "Widgets": [
                 {
                     "Type": "Iframe",
@@ -357,11 +449,11 @@
         },
         {
             "Name": "MACHINE 6 ",
-            "ID": "Machine6",
+            "ID": "Machine6Grafana",
             "Widgets": [
                 {
                     "Type": "Iframe",
-                    "src": "http://localhost:3000/d/f933ce28-58f0-4a5a-b795-9b9a53a14599/machine-6?orgId=1&shareView=link&from=1722393349796&to=1722399999166",
+                    "src": "http://localhost:3000/d/f933ce28-58f0-4a5a-b795-9b9a53a14599/machine-6?orgId=1&from=1722393349796&to=1722399999166&viewPanel=1",
                     "X": 0,
                     "Y": 10,
                     "W": 99,

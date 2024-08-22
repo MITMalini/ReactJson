@@ -4,6 +4,9 @@ const theme = {
       background: "#f1f1f1",
       text: "red",
     },
+    body: {
+      background: "#000",
+    },
     footer: {
       background: "#f1f1f1",
       text: "black",
