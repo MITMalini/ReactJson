@@ -6,13 +6,8 @@ import Entry from "./Entry";
 import Button from "./Button";
 import Image from "./Image";
 import Iframe from "./Iframe";
-import { useNavigate } from "react-router-dom";
 
 const Screen = ({ screen, onAction }) => {
-  const navigate = useNavigate();
-  const handleAction = (action) => {
-    navigate(`/${action}`);
-  };
   const renderWidgets = (widgets) => {
     return widgets.map((widget, index) => {
       switch (widget.Type) {

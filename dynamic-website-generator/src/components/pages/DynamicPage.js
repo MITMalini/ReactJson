@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import config from "../data/config.json";
 import Screen from "../Screen";
 import Button from "@mui/material/Button";
 import theme from "../Theme"; // Import the theme
@@ -8,23 +7,57 @@ import theme from "../Theme"; // Import the theme
 const DynamicPage = () => {
   const { pageId } = useParams();
   const navigate = useNavigate();
+  const [config, setConfig] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const screen = config.Screens.find((screen) => screen.ID === pageId);
+  useEffect(() => {
+    fetch("http://172.25.164.252:7575/start?devrole=machine")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setConfig(data);
+        setLoading(false);
+        console.log("dynamiccomponent.js", data);
+      })
+      .catch((error) => {
+        console.error("Error fetching config:", error);
+        setLoading(false);
+      });
+  }, []);
 
-  if (!screen) {
-    return <div>Page not found</div>;
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
-  const handleAction = (Action) => {
-    if (Action === "back") {
+  // Show an error message if config data failed to load
+  if (!config) {
+    return <div>Error loading configuration. Please try again later.</div>;
+  }
+
+  // Find the screen based on pageId, or show a fallback if not found
+  const screen = config.Screens.find((screen) => screen.ID === pageId);
+  console.log("pageId:", pageId);
+  console.log("config.Screens:", config.Screens);
+  console.log("Selected screen:", screen);
+
+  if (!screen) {
+    return <div>Screen not found for ID: {pageId}</div>;
+  }
+
+  const handleAction = (action) => {
+    if (action === "back") {
       navigate(-1); // Go back
-    } else if (Action === "login" || Action === "Next") {
-      const nextScreenId = screen.Footer.items[0].NextScreen; // Get the next screen ID
+    } else if (action === "login" || action === "Next") {
+      const nextScreenId = screen.FooterWidgets?.NextScreen; // Get the next screen ID
       if (nextScreenId) {
         navigate(`/${nextScreenId}`);
       }
     } else {
-      console.log(`Unhandled Action: ${Action}`);
+      console.log(`Unhandled action: ${action}`);
     }
   };
 
@@ -49,7 +82,7 @@ const DynamicPage = () => {
                 fontSize: theme.fontSize.header,
               }}
             >
-              {screen.Name}
+              {item.Text}
             </h1>
           );
         case "Button":
@@ -65,7 +98,7 @@ const DynamicPage = () => {
                 fontSize: theme.fontSize.button,
               }}
             >
-              {item.text}
+              {item.Text}
             </Button>
           );
         default:
@@ -92,7 +125,7 @@ const DynamicPage = () => {
                 width: item.width,
               }}
             >
-              {item.text}
+              {item.Text}
             </Button>
           );
         default:
@@ -110,7 +143,6 @@ const DynamicPage = () => {
           justifyContent: "space-between",
           height: "10vh",
           display: "flex",
-          ...config.Header,
           backgroundColor: theme.colors.header.background,
         }}
       >
@@ -127,11 +159,10 @@ const DynamicPage = () => {
           display: "flex",
           bottom: "0",
           position: "fixed",
-          ...config.Footer,
           backgroundColor: theme.colors.footer.background,
         }}
       >
-        {screen.Footer ? renderFooterItems(screen.Footer.items) : null}
+        {screen.FooterWidgets ? renderFooterItems(screen.FooterWidgets) : null}
       </footer>
     </div>
   );
